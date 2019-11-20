@@ -53,6 +53,7 @@ func main() {
 			text, _ := reader.ReadString('\n')
 			n, err := strconv.Atoi(text[:len(text)-1])
 			if err != nil {
+				_, err = file.WriteString(fmt.Sprintln(palavra + "\t" + "SEM_HIPER" + "\t" + e.Text))
 				return
 			}
 			_, err = file.WriteString(fmt.Sprintln(palavra + "\t" + split[n] + "\t" + e.Text))
